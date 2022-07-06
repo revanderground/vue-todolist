@@ -2,7 +2,8 @@ const app = new Vue (
     {
         el: '#root',
         data: {
-            hide: false,
+
+           
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -23,10 +24,13 @@ const app = new Vue (
         },
         methods:{
 
-            Hidden: function(){
-                this.list-item=='';
-                this.todo.text=='';
-            }
+          remove: function(indice){
+            this.todos.splice(indice,1);
+
+          
+
+
+          }
 
         }
     }        
