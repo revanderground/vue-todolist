@@ -20,8 +20,8 @@
                 <div class="col-12 text-center">
                     <div class="title">To Do List</div>
                     <ul class="list  p-3">
-                        <li :class='hide' :class="(todo.done==true) ? 'text-decoration-line-through' : '' " class="list-item row flex-wrap d-flex justify-content-center align-items-center" v-for="todo in todos">
-                            <div class="item col-2">{{todo.text}}</div><div class="col-1" ><i class="X fa-solid fa-x red" @click="Hidden()"></i></div>
+                        <li :class='Hidden' :class="(todo.done==true) ? 'text-decoration-line-through' : '' " class="list-item row flex-wrap d-flex justify-content-center align-items-center" v-for="(todo, index) in todos">
+                            <div class="item col-3">{{index+1}} => {{todo.text}}</div><div class="col-1" ><i class="X fa-solid fa-x red" @click="Hidden()"></i></div>
                         </li>
 
                     </ul>
