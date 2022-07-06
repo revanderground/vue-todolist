@@ -1,0 +1,29 @@
+.title{
+    color:rgb(0, 70, 151);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+li{
+list-style: none;
+}
+
+.X{
+    font-size: 1rem;
+}
+
+.red{
+    color:red;
+} 
+
+.list-item{
+    border: 1px solid blue;
+}
+
+.item{
+    font-size: 1.5rem;
+}
+
+.hide{
+    display:block;
+}
