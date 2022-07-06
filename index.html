@@ -28,6 +28,9 @@
 
                     <input type="text" v-model.trim="newTodos" @keyUp.enter="addToList(newTodos)">
 
+                    <div class="py-3 ">
+                        <button type="submit"  v-model.trim="newTodos" class="btn btn-primary" @click="addToList(newTodos)">Stampa elemento lista</button>
+                    </div>
 
 
 
