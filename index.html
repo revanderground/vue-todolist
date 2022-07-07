@@ -20,16 +20,27 @@
                 <div class="col-12 text-center">
                     <div class="title">To Do List</div>
                     <ul class="list  p-3">
-                        <li  :class="(todo.done==true) ? 'text-decoration-line-through' : '' " class="list-item row flex-wrap d-flex justify-content-center align-items-center" v-for="(todo, index) in todos">
-                            <div class="item col-3">{{index+1}} => {{todo.text}}</div><div class="col-1" ><i class="X fa-solid fa-x red" @click="remove(index)"></i></div>
-                        </li>
+                        <li  :class="{'text-decoration-line-through' : todo.done}" 
+                            class="list-item row flex-wrap d-flex justify-content-center align-items-center" 
+                            v-for="(todo, index) in todos" 
+                            @click="updateDoneStatus(index)">
 
+                            <div class="item col-3">{{todo.text}} </div>
+                            <div class="col-1" ><i class="X fa-solid fa-x red" 
+                                @click="remove(index)"></i>
+                            </div>
+                        </li>
+                        
+                        
                     </ul>
 
-                    <input type="text" v-model.trim="newTodos" @keyUp.enter="addToList(newTodos)">
+                    <input type="text" class="py-2 px-5 fs-2" 
+                        placeholder="Nuovo elemento todos" 
+                        v-model.trim="currentTodoField" 
+                        @keyUp.enter="addToList(currentTodoField)">
 
                     <div class="py-3 ">
-                        <button type="submit"  class="btn btn-primary" @click="addToList(newTodos)">Stampa elemento lista</button>
+                        <button type="button"  class="btn btn-primary" @click="addToList(currentTodoField)">Stampa elemento lista</button>
                     </div>
 
 

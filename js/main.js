@@ -3,7 +3,7 @@ const app = new Vue (
         el: '#root',
         data: {
 
-            newTodos:[],
+            currentTodoField:'',
            
             todos: [
                 {
@@ -29,16 +29,28 @@ const app = new Vue (
             this.todos.splice(indice,1);
           },
 
-          addToList: function(currentToDoEl){
-            if (currentToDoEl==''){
-                console.warn('stai provando ad inserire un elemento todo vuoto');
-            } else{
-                this.todos.push(currentToDoEl);
-                this.newTodos = '';
+          addToList: function(ToDoElementText){
+            if (ToDoElementText!=''){
+                const todoElement = {
+                    text: ToDoElementText,
+                    done: false,
+                }
+                this.todos.push(todoElement);
+                this.currentTodoField = '';
+            } else{    
+                    console.warn('stai provando ad inserire un elemento todo vuoto');
             }
 
-           }
+            },
+
+            
+            updateDoneStatus: function (todoIndex){
+                this.todos[todoIndex].done = !this.todos[todoIndex].done;
+            }    
+            
+
+           },
 
         }
-    }       
+           
 );
